@@ -29,6 +29,10 @@ h1{
 .header h2 {
     font-size: 2px;
 }
+
+.header p {
+  font-size: larger;
+}
 .user {
     display: flex;
     align-items: center;

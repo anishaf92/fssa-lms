@@ -9,6 +9,12 @@ body {
     background: #ffffff;
 }
 
+/* 🔴 THIS WAS MISSING – CORE FIX */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
 /* Main Content */
 .main {
     flex: 1;
@@ -20,11 +26,16 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
 .header h2 {
     font-size: 22px;
+}
+
+.header small {
+    color: #64748b;
 }
 
 .user {
@@ -55,13 +66,24 @@ body {
 .grid a {
     text-decoration: none;
 }
+
+/* Cards */
 .card {
     padding: 20px;
     border-radius: 14px;
     color: white;
     min-height: 140px;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    font-size: 20px;
 }
 
 .card span {
@@ -71,7 +93,6 @@ body {
     font-size: 40px;
     opacity: 0.3;
 }
-
 
 /* Card Colors */
 .red {

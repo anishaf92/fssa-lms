@@ -1,7 +1,13 @@
 from fastapi import FastAPI
+from app.db.database import Base, engine
+from app.router import user, course, main_topic, sub_topic, content
 
-app=FastAPI()
+Base.metadata.create_all(bind=engine)
 
-from app.router.user import router as user_router
+app = FastAPI(title="FSSA LMS Backend")
 
-app.include_router(user_router)
+app.include_router(user.router)
+app.include_router(course.router)
+app.include_router(main_topic.router)
+app.include_router(sub_topic.router)
+app.include_router(content.router)

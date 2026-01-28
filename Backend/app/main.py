@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+app=FastAPI()
 
-@app.get("/")
-def root():
-    return {"message": "FSSA-LMS backend running"}
+from app.router.user import router as user_router
+
+app.include_router(user_router)
